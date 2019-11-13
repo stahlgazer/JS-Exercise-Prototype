@@ -53,9 +53,6 @@ Person.prototype.toString = function(){
   return `${this.name} and ${this.age}`;
 }
 
-
-
-
 /*
   TASK 2
     - Write a Car constructor that initializes `model` and `milesPerGallon` from arguments.
@@ -71,7 +68,13 @@ Person.prototype.toString = function(){
 */
 
 function Car(model, milesPerGallon) {
-
+  this.model = model;
+  this.milesPerGallon = milesPerGallon;
+  this.tank = 0;
+  this.odometer = 0;
+}
+Car.prototype.fill = function(gallons){
+  this.tank = this.tank + gallons;
 }
 
 /*
@@ -82,7 +85,9 @@ function Car(model, milesPerGallon) {
         + Should return a string "Playing with x", x being the favorite toy.
 */
 function Baby(name, age, favoriteToy) {
-
+  this.name = name;
+  this.age = age;
+  this.favoriteToy = favoriteToy;
 }
 
 /* 
