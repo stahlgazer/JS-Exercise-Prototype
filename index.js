@@ -19,13 +19,11 @@ Airplane.prototype.land = function () {
   this.isFlying = false;
 };
 
-
 /*
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
 */
-
 /*
   TASK 1
     - Write a Person Constructor that initializes `name` and `age` from arguments.
@@ -39,9 +37,24 @@ Airplane.prototype.land = function () {
         + It should return a string with `name` and `age`. Example: "Mary, 50"
 */
 
-function Person() {
-
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+  this.stomach = [];
 }
+Person.prototype.eat = function(someFood){
+  if (this.stomach.length < 10){
+    this.stomach.push(someFood)}
+  }
+Person.prototype.poop = function () {
+  this.stomach.splice(0, this.stomach.length)
+}
+Person.prototype.toString = function(){
+  return `${this.name} and ${this.age}`;
+}
+
+
+
 
 /*
   TASK 2
@@ -57,7 +70,7 @@ function Person() {
         + The `drive` method should return a string "I ran out of fuel at x miles!" x being `odometer`.
 */
 
-function Car() {
+function Car(model, milesPerGallon) {
 
 }
 
@@ -68,7 +81,7 @@ function Car() {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
-function Baby() {
+function Baby(name, age, favoriteToy) {
 
 }
 
